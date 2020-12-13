@@ -35,7 +35,7 @@ export default function Home(props) {
             </Head>
 
             {blocks.map((block) => (
-                <LinkItem block={block} />
+                <LinkItem key={block.id} block={block} />
             ))}
         </div>
     )
