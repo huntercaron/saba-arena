@@ -23,11 +23,11 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  
-  -moz-font-feature-settings:"kern" 1; 
-  -ms-font-feature-settings:"kern" 1; 
-  -o-font-feature-settings:"kern" 1; 
-  -webkit-font-feature-settings:"kern" 1; 
+
+  -moz-font-feature-settings:"kern" 1;
+  -ms-font-feature-settings:"kern" 1;
+  -o-font-feature-settings:"kern" 1;
+  -webkit-font-feature-settings:"kern" 1;
   font-feature-settings:"kern" 1;
   font-kerning: normal;
 }
@@ -37,7 +37,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, li {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-family: Helvetica, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
@@ -59,12 +59,38 @@ a:hover {
 
 /* Site Styles */
 
+a {
+  width: 40%;
+  text-decoration: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.link-item:hover {
+  background-color: yellow;
+}
+
 .container {
-  padding: 10px;
 }
 
 .link-item {
+  list-style-type: none;
+  padding: 0 5px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  //display: grid;
+  //grid-template-columns: 200px 1fr 200px;
+}
+
+.time {
+  text-align: right;
+  width: 20%;
+}
+
+.description {
+  width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

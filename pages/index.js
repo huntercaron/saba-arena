@@ -1,25 +1,27 @@
 import Head from "next/head"
 import { getArenaChannel } from "../lib/api"
 
+
 // Grabs all the blocks from the are.na channel and repeats the "LinkItem" component per block
 // See all the block attributes here https://dev.are.na/documentation/blocks#Block52094
 
 function LinkItem(props) {
     const { block } = props
-    const { source } = block
 
     const isBlockLink =
-        source.hasOwnProperty("title") && source.hasOwnProperty("url")
+        block.source.hasOwnProperty("title") && block.source.hasOwnProperty("url")
 
     if (!isBlockLink) return null
 
     return (
         <li className="link-item">
-            <a href={source.url} target="_blank" rel="noopener noreferrer">
-                {source.title}
+            <a className="inline-block" href={block.source.url} target="_blank" rel="noopener noreferrer">
+                {block.generated_title}
             </a>
 
-            <p>{block.created_at}</p>
+            <p className="inline-block description">{block.description}</p>
+
+            <p className="inline-block time">{block.created_at.split("T")[0]}</p>
         </li>
     )
 }
@@ -30,7 +32,7 @@ export default function Home(props) {
     return (
         <div className="container">
             <Head>
-                <title>Saba</title>
+                <title>List of References by Saba</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
