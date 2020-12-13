@@ -73,6 +73,7 @@ a {
 }
 
 .link-item {
+  border-bottom: 1px solid #eee;
   list-style-type: none;
   padding: 0 5px;
   width: 100%;
